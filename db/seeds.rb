@@ -9,11 +9,15 @@
 require 'faker'
 
 
-#10.times do 
-  #user = User.create!(first_name:Faker::Name.first_name,last_name:Faker::Name.last_name,email: Faker::Internet.email)
-#end
+10.times do 
+  user = User.create!(first_name:Faker::Name.first_name,last_name:Faker::Name.last_name,email: Faker::Internet.email)
+end
 
+5.times do
+  category = Category.create!(content: Faker::Dessert.unique.flavor)
+end
 
 10.times do 
-	article = Article.create!(title:Faker::RickAndMorty.location, content:Faker::RickAndMorty.quote, user_id: rand(User.first.id..User.last.id))
+	article = Article.create!(title:Faker::RickAndMorty.location, content:Faker::RickAndMorty.quote, user_id: (rand(User.first.id..User.last.id)), category_id: (rand(Category.first.id..Category.last.id)))
 end
+

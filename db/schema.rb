@@ -14,10 +14,12 @@ ActiveRecord::Schema.define(version: 2019_01_30_162559) do
 
   create_table "articles", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "category_id"
     t.string "title"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
