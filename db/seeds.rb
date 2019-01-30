@@ -21,3 +21,6 @@ end
 	article = Article.create!(title:Faker::RickAndMorty.location, content:Faker::RickAndMorty.quote, user_id: (rand(User.first.id..User.last.id)), category_id: (rand(Category.first.id..Category.last.id)))
 end
 
+15.times do 
+	comment = Comment.create(content:Faker::RickAndMorty.quote, user_id: (rand(User.first.id..User.last.id)), article_id: (rand(Article.first.id..Article.last.id)))
+end
