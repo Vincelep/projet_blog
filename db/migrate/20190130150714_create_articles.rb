@@ -5,8 +5,6 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.belongs_to :category, index: true
       t.string :title
       t.text :content
-      #t.integer :user_id
-      #t.integer :category_id
       t.timestamps
     end
   end
